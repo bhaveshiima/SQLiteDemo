@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        var dBase = openOrCreateDatabase("sqlite", Context.MODE_PRIVATE, null)  // SQLDatabase claass oject
+        var dBase = openOrCreateDatabase("tblSQLite", Context.MODE_PRIVATE, null)  // SQLDatabase claass oject
 
         // Create table and database
         dBase.execSQL("create table if not exists employee(_id integer primary key autoincrement, id integer, name varchar(100), designation varchar(100), department varchar(100))" )
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 
             // Insert data into Table
-            var status = dBase.insert("sqlite",null,values)
+            var status = dBase.insert("employee",null,values)
 
             if(status==-1.toLong()){
                 Toast.makeText(this@MainActivity, "Failed to Insert", Toast.LENGTH_LONG).show()
