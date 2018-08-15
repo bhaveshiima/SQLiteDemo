@@ -47,14 +47,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Insert"
-            android:id="@+id/insert"/>
+            android:id="@+id/insert" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Read"
-            android:id="@+id/read"/>
+            android:id="@+id/read" />
 
     </LinearLayout>
 

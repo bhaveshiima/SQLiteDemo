@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.SimpleCursorAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -41,8 +42,21 @@ class MainActivity : AppCompatActivity() {
                 et1.setText(""); et2.setText(""); et3.setText(""); et4.setText("")
             }
 
+        }  // insert [ Finish ]
 
 
+
+        // When user click on Read Button [ START ]
+        read.setOnClickListener {
+
+            var cursor = dBase.query("employee",null,null,null,null,null,null)
+
+            var from = arrayOf("id","name","designation","department")
+            var to = intArrayOf(R.id.tv1,R.id.tv2,R.id.tv3,R.id.tv4)
+
+            var cAdapter = SimpleCursorAdapter(this@MainActivity, R.layout.indiview, cursor, from, to,0 )
+
+            lview.adapter = cAdapter
 
 
 
