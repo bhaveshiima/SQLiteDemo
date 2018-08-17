@@ -95,6 +95,8 @@ class MainActivity : AppCompatActivity() {
             var cv = ContentValues()
             cv.put("name", et2.text.toString())
             cv.put("designation", et3.text.toString())
+            cv.put("department", et4.text.toString())
+
 
             var count = dBase.update("employee", cv, "id=?", arrayOf(et1.text.toString()))
             // no of records updated store into count return type is int
@@ -121,11 +123,8 @@ class MainActivity : AppCompatActivity() {
 
             if(dcount > 0){
                 Toast.makeText(this@MainActivity, "Record deleted Successfully", Toast.LENGTH_LONG).show()
-                et1.setText(""); et2.setText(""); et3.setText(""); et4.setText("")
-
             }else{
                 Toast.makeText(this@MainActivity, "Failed to delete", Toast.LENGTH_LONG).show()
-
             }
 
 
