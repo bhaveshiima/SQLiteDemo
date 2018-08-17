@@ -107,7 +107,6 @@ class MainActivity : AppCompatActivity() {
 
             }else{
                 Toast.makeText(this@MainActivity, "Failed to update Successfully", Toast.LENGTH_LONG).show()
-
             }
 
 
@@ -119,19 +118,15 @@ class MainActivity : AppCompatActivity() {
 
         delete.setOnClickListener {
             // 3 paraeter need to pass into delete operation
-           var dcount =  dBase.delete("employee", "id?", arrayOf(et1.text.toString()))
+            // delete from table_name where id=?
+           var dcount =  dBase.delete("employee", "id=?", arrayOf(et1.text.toString()))
 
             if(dcount > 0){
                 Toast.makeText(this@MainActivity, "Record deleted Successfully", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(this@MainActivity, "Failed to delete", Toast.LENGTH_LONG).show()
             }
-
-
-
-
-
-        }
+        } // Delete [ END ]
 
 
     } //OnCreate method
